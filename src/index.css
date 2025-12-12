@@ -1,0 +1,620 @@
+@import "tailwindcss";
+
+* {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0B192C 0%, #000000 100%);
+    color: white;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.center-container {
+    @apply container mx-auto w-[90%];
+}
+
+.orange-gradient-bg {
+    background: linear-gradient(135deg, #000000 0%, #FF6500 100%);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #FF6500 0%, #FF8533 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.primary-bg {
+    background-color: #FF6500;
+}
+
+.primary-text {
+    color: #FF6500;
+}
+
+.secondary-bg {
+    background-color: #1E3E62;
+}
+
+.secondary-text {
+    color: #1E3E62;
+}
+
+.dark-bg {
+    background-color: #0B192C;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 101, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 101, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 101, 0, 0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ========== COMPONENTS ========== */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6500 0%, #FF8533 100%);
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.section-title:hover:after {
+    width: 100%;
+}
+
+/* ========== TIMELINE ========== */
+.timeline-line {
+    background: linear-gradient(to bottom, #FF6500, #FF8533);
+}
+
+.timeline-dot {
+    background: linear-gradient(to bottom right, #FF6500, #FF8533);
+}
+
+/* ========== PROJECTS ========== */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(255, 101, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 25, 44, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.project-card .p-6 {
+    padding: 1.5rem !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.project-card h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card p.text-gray-300 {
+    color: #D1D5DB !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 1rem !important;
+    flex-grow: 1 !important;
+}
+
+.project-overlay a {
+    background: linear-gradient(90deg, #FF6500 0%, #FF8533 100%) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.project-overlay a:hover {
+    opacity: 0.9 !important;
+    transform: scale(1.05) !important;
+}
+
+.flex.flex-wrap.gap-2.mb-4 {
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.text-sm.bg-secondary-bg {
+    background-color: #1E3E62 !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    white-space: nowrap !important;
+}
+
+/* ========== CONTACT ========== */
+.contact-card {
+    background: rgba(30, 62, 98, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 101, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: #FF6500;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 101, 0, 0.15);
+}
+
+.contact-input {
+    background: #0b192cb3;
+    border: 1px solid rgba(255, 101, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+    border-color: #FF6500;
+    box-shadow: 0 0 0 3px rgba(255, 101, 0, 0.2);
+    outline: none;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Mobile First Approach */
+
+/* Small devices (phones, 640px and down) */
+@media (max-width: 480px) {
+    .project-card .h-48 {
+        height: 10rem !important;
+        min-height: 10rem !important;
+    }
+
+    .project-card .p-6 {
+        padding: 1rem !important;
+    }
+
+    .project-card h3 {
+        font-size: 1.125rem !important;
+        line-height: 1.5rem !important;
+    }
+
+    .text-sm.bg-secondary-bg {
+        font-size: 0.625rem !important;
+        padding: 0.125rem 0.5rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .timeline-line {
+        left: 1.5rem !important;
+        transform: none !important;
+    }
+
+    .timeline-dot {
+        left: 1.25rem !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .project-card .h-48 {
+        height: 12rem !important;
+        min-height: 12rem !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .py-16.px-6.md\\:px-12.lg\\:px-24 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .section-title {
+        font-size: 2rem !important;
+        line-height: 2.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* تحسينات للأنيميشن على الشاشات الصغيرة */
+    [data-aos-delay] {
+        transition-delay: 0s !important;
+    }
+
+    [data-aos] {
+        transition-duration: 0.5s !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* إعادة ضبط الخط الزمني للهواتف */
+    .timeline-line {
+        left: 1.5rem !important;
+        transform: none !important;
+    }
+
+    /* إعادة وضع النقاط */
+    .timeline-dot {
+        position: absolute !important;
+        left: 1.25rem !important;
+        transform: translateX(-50%) !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* إعادة تنظيم العناصر */
+    .relative.flex-col.md\\:flex-row.items-center {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 2.5rem !important;
+        position: relative !important;
+    }
+
+    /* إصلاح عرض العناصر */
+    .md\:w-1\:2 {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .md\\:pl-12,
+    .md\\:pr-12 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* إصلاح الترتيب */
+    [class*="flex-col-reverse"] .md\:w-1\:2,
+    [class*="flex-col-reverse"] .md\:pl-12 {
+        order: unset !important;
+    }
+
+    /* إخفاء محاذاة اليمين على الهواتف */
+    .md\\:text-right {
+        text-align: left !important;
+    }
+
+    /* تحسين المسافات */
+    .space-y-12>*+* {
+        margin-top: 2rem !important;
+    }
+
+    /* تحسين الخطوط */
+    .text-xl {
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+    }
+
+    .text-gray-200,
+    .text-gray-300 {
+        font-size: 0.875rem !important;
+        line-height: 1.25rem !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .timeline-line {
+        left: 50% !important;
+    }
+
+    .timeline-dot {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .md\:w-1\:2 {
+        width: 45% !important;
+    }
+
+    .md\:pl-12,
+    .md\:pr-12 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* تحسينات للشاشات الكبيرة */
+@media (min-width: 1025px) {
+    .timeline-line {
+        left: 50% !important;
+    }
+
+    .timeline-dot {
+        position: relative !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .py-16.px-6.md\\:px-12.lg\\:px-24 {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .project-card .h-48 {
+        height: 10rem !important;
+        min-height: 10rem !important;
+    }
+}
+
+/* حواسيب محمولة صغيرة */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+
+    .py-16.px-6.md\\:px-12.lg\\:px-24 {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+    }
+}
+
+/* شاشات كبيرة */
+@media (min-width: 1281px) {
+    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+
+    .py-16.px-6.md\\:px-12.lg\\:px-24 {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+    }
+}
+
+
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+    .center-container {
+        width: 95%;
+    }
+
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Large devices (desktops, 1024px and down) */
+@media (max-width: 1024px) {
+    .md\:w-1\/2 {
+        width: 100% !important;
+    }
+}
+
+/* ========== ACCESSIBILITY ========== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========== BROWSER FIXES ========== */
+@supports (-webkit-touch-callout: none) {
+    .project-card {
+        -webkit-transform: translateZ(0);
+    }
+
+    .project-overlay {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+}
+
+/* ========== TOUCH DEVICES ========== */
+@media (hover: none) and (pointer: coarse) {
+    .project-overlay {
+        opacity: 0.9 !important;
+        background: rgba(11, 25, 44, 0.85) !important;
+    }
+
+    .project-card .project-overlay {
+        position: absolute !important;
+        pointer-events: auto !important;
+    }
+
+    /* جعل Overlay يظهر عند النقر على الهواتف */
+    .project-card:active .project-overlay {
+        opacity: 1 !important;
+    }
+}
+
+/* أنماط روابط التنقل */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FF6500 0%, #FF8533 100%);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active-nav {
+    color: #FF6500;
+}
+
+.nav-link.active-nav::after {
+    width: 100%;
+}
+
+/* تحسينات للقائمة المتنقلة */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* تحسينات للاستجابة */
+@media (max-width: 768px) {
+    .nav-link {
+        padding-bottom: 2px;
+    }
+
+    .nav-link::after {
+        height: 1px;
+    }
+}
+
+/* تحسينات للخط عند النشاط */
+.nav-link.active-nav {
+    font-weight: 600;
+}
+
+/* تأثيرات hover إضافية */
+.nav-link:hover {
+    color: #FF8533;
+}
+
+/* تحسينات للزر المتنقل */
+button:focus {
+    outline: 2px solid rgba(255, 101, 0, 0.5);
+    outline-offset: 2px;
+}
+
+
+
+.progress-container {
+    width: 100%;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    height: 0.75rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #FF6500 0%, #0b192cb3 100%);
+    border-radius: 9999px;
+    transition: width 1.5s ease-in-out;
+}
