@@ -9,6 +9,7 @@ body {
     background: linear-gradient(135deg, #0B192C 0%, #000000 100%);
     color: white;
     overflow-x: hidden;
+    width: 100%;
 }
 
 .center-container {
@@ -236,9 +237,6 @@ body {
     outline: none;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
-/* Mobile First Approach */
-
 /* Small devices (phones, 640px and down) */
 @media (max-width: 480px) {
     .project-card .h-48 {
@@ -285,18 +283,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-
-    .py-16.px-6.md\\:px-12.lg\\:px-24 {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-    }
-
     .section-title {
         font-size: 2rem !important;
         line-height: 2.5rem !important;
@@ -330,42 +316,6 @@ body {
         margin-bottom: 0 !important;
     }
 
-    /* إعادة تنظيم العناصر */
-    .relative.flex-col.md\\:flex-row.items-center {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding-left: 2.5rem !important;
-        position: relative !important;
-    }
-
-    /* إصلاح عرض العناصر */
-    .md\:w-1\:2 {
-        width: 100% !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        text-align: left !important;
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-
-    .md\\:pl-12,
-    .md\\:pr-12 {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    /* إصلاح الترتيب */
-    [class*="flex-col-reverse"] .md\:w-1\:2,
-    [class*="flex-col-reverse"] .md\:pl-12 {
-        order: unset !important;
-    }
-
-    /* إخفاء محاذاة اليمين على الهواتف */
-    .md\\:text-right {
-        text-align: left !important;
-    }
-
-    /* تحسين المسافات */
     .space-y-12>*+* {
         margin-top: 2rem !important;
     }
@@ -392,16 +342,6 @@ body {
         left: 50% !important;
         transform: translateX(-50%) !important;
     }
-
-    .md\:w-1\:2 {
-        width: 45% !important;
-    }
-
-    .md\:pl-12,
-    .md\:pr-12 {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
 }
 
 /* تحسينات للشاشات الكبيرة */
@@ -417,48 +357,11 @@ body {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem !important;
-    }
-
-    .py-16.px-6.md\\:px-12.lg\\:px-24 {
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
-    }
-
     .project-card .h-48 {
         height: 10rem !important;
         min-height: 10rem !important;
     }
 }
-
-/* حواسيب محمولة صغيرة */
-@media (min-width: 1025px) and (max-width: 1280px) {
-    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 2rem !important;
-    }
-
-    .py-16.px-6.md\\:px-12.lg\\:px-24 {
-        padding-left: 4rem !important;
-        padding-right: 4rem !important;
-    }
-}
-
-/* شاشات كبيرة */
-@media (min-width: 1281px) {
-    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 2rem !important;
-    }
-
-    .py-16.px-6.md\\:px-12.lg\\:px-24 {
-        padding-left: 6rem !important;
-        padding-right: 6rem !important;
-    }
-}
-
 
 
 /* Medium devices (tablets, 768px and down) */
@@ -467,20 +370,21 @@ body {
         width: 95%;
     }
 
-    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-2 {
-        grid-template-columns: 1fr !important;
-    }
-
     section {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
 }
 
-/* Large devices (desktops, 1024px and down) */
-@media (max-width: 1024px) {
-    .md\:w-1\/2 {
-        width: 100% !important;
+/* ========== ACCESSIBILITY ========== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
@@ -531,6 +435,7 @@ body {
     position: relative;
     padding-bottom: 4px;
     transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .nav-link::after {
@@ -557,32 +462,23 @@ body {
     width: 100%;
 }
 
-/* تحسينات للقائمة المتنقلة */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-slideDown {
-    animation: slideDown 0.3s ease-out;
-}
-
-/* تحسينات للاستجابة */
+/* تحسينات للقائمة المتنقلة على الشاشات الصغيرة */
 @media (max-width: 768px) {
     .nav-link {
         padding-bottom: 2px;
+        font-size: 1rem;
     }
 
     .nav-link::after {
         height: 1px;
     }
+}
+
+
+/* تحسينات للزر المتنقل */
+button:focus {
+    outline: 2px solid rgba(255, 101, 0, 0.5);
+    outline-offset: 2px;
 }
 
 /* تحسينات للخط عند النشاط */
@@ -594,13 +490,6 @@ body {
 .nav-link:hover {
     color: #FF8533;
 }
-
-/* تحسينات للزر المتنقل */
-button:focus {
-    outline: 2px solid rgba(255, 101, 0, 0.5);
-    outline-offset: 2px;
-}
-
 
 
 .progress-container {

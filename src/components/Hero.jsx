@@ -91,13 +91,7 @@ const Hero = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 flex 
-    justify-center        /* جميع الشاشات الصغيرة */
-    sm:justify-center 
-    md:justify-center     /* شاشات المتوسطة */
-    lg:justify-end        /* شاشات الكبيرة */
-    slide-in-right"
-                    >
+                    <div className="w-full md:w-[50%] flex justify-center sm:justify-center md:justify-center lg:justify-end slide-in-right">
                         <div className="relative">
                             <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-82 md:h-82 rounded-full border-5 border-[#FF6500] shadow-3xl">
                                 <div className="w-full h-full flex items-center justify-center">
@@ -105,7 +99,7 @@ const Hero = () => {
                                         <img
                                             src={avatar}
                                             alt="Avatar"
-                                            className="translate-x-13 -translate-y-4 scale-[1.08]"
+                                            className=" -translate-y-4 scale-[1] sm:translate-x-13 sm:scale-[1.08]"
                                         />
                                     </div>
                                 </div>

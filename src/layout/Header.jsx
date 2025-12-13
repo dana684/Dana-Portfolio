@@ -37,7 +37,7 @@ const Header = () => {
     useEffect(() => {
         const handleScroll = () => {
             const sections = document.querySelectorAll('section[id]');
-            const scrollPosition = window.scrollY + 100; // إضافة إزاحة للهيدر
+            const scrollPosition = window.scrollY + 80; // إضافة إزاحة للهيدر
 
             let currentSectionId = 'home';
 
@@ -93,10 +93,10 @@ const Header = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
     return (
-        <nav className="fixed w-full z-50 py-4 px-6 dark-bg shadow-lg">
+        <nav className="fixed w-full top-0 left-0 z-50 py-4 px-6 dark-bg shadow-lg">
             <div className="center-container">
                 <div className="flex justify-between items-center">
-                    {/* الشعار */}
+                    {/* Logo */}
                     <a
                         href="#home"
                         onClick={(e) => handleSmoothScroll(e, '#home')}
@@ -105,7 +105,7 @@ const Header = () => {
                         Dana.J
                     </a>
 
-                    {/* قائمة سطح المكتب */}
+                    {/* Desktop menu */}
                     <div className="hidden md:flex space-x-8">
                         {linksnav.map((link, i) => {
                             const sectionId = link.href.replace('#', '');
@@ -124,7 +124,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* قائمة الجوال - تمرير حالة القسم النشط */}
+                {/* Mobile menu */}
                 <MobileMenu
                     links={linksnav}
                     activeSection={activeSection}

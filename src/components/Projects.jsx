@@ -37,7 +37,7 @@ const projectData = [
         link: "https://zen-digital-x0ky.onrender.com/"
     },
     {
-        name: "Zen Digital",
+        name: "Employees registration",
         description: "An Employees registration website for a specific company",
         techStack: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
         image: reg,

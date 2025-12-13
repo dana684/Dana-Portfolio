@@ -34,8 +34,8 @@ const MobileMenu = ({ links, activeSection, onLinkClick }) => {
                                 href={link.href}
                                 onClick={(e) => handleLinkClick(e, link.href)}
                                 className={`font-medium py-2 px-4 rounded transition-colors ${activeSection === sectionId
-                                        ? 'primary-bg text-white'
-                                        : 'hover:bg-gray-800'
+                                    ? 'primary-bg text-white'
+                                    : 'hover:bg-gray-800'
                                     }`}
                             >
                                 {link.name}
