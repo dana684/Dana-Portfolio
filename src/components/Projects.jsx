@@ -6,6 +6,7 @@ import style from '../assets/styleshop.png';
 import zen from '../assets/zen.png';
 import flight from '../assets/flight.png';
 import reg from '../assets/reg.png';
+import hospital from '../assets/nova.png';
 
 const projectData = [
     {
@@ -42,6 +43,13 @@ const projectData = [
         techStack: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
         image: reg,
         link: ""
+    },
+    {
+        name: "MEDINOVA-Hospital",
+        description: "A Hospital website | Best Medical Care For Yourself and Your Family",
+        techStack: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React.js"],
+        image: hospital,
+        link: "https://medinova-hospital.onrender.com/"
     },
 ];
 
