@@ -17,6 +17,13 @@ const projectData = [
         link: ""
     },
     {
+        name: "MEDINOVA-Hospital",
+        description: "A Hospital website | Best Medical Care For Yourself and Your Family",
+        techStack: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React.js"],
+        image: hospital,
+        link: "https://medinova-hospital.onrender.com/"
+    },
+    {
         name: "EcoBuild",
         description: "A sustainable construction company website with modern design and responsive layout.",
         techStack: ["HTML", "CSS", "Tailwind CSS"],
@@ -26,7 +33,7 @@ const projectData = [
     {
         name: "StyleShop",
         description: "An e-commerce fashion store with product catalog, shopping cart, and checkout functionality.",
-        techStack: ["HTML", "CSS"],
+        techStack: ["HTML", "CSS", "JavaScript"],
         image: style,
         link: "https://style-shop-ydcv.onrender.com"
     },
@@ -44,13 +51,7 @@ const projectData = [
         image: reg,
         link: ""
     },
-    {
-        name: "MEDINOVA-Hospital",
-        description: "A Hospital website | Best Medical Care For Yourself and Your Family",
-        techStack: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React.js"],
-        image: hospital,
-        link: "https://medinova-hospital.onrender.com/"
-    },
+
 ];
 
 const Projects = () => {
